@@ -1,22 +1,27 @@
 Summary:	LibASS - SSA/ASS subtitles rendering library
 Summary(pl.UTF-8):	LibASS - biblioteka renderująca napisy SSA/ASS
 Name:		libass
-Version:	0.9.13
+Version:	0.10.0
 Release:	1
-License:	GPL v2+
+License:	MIT-like
 Group:		Libraries
 #Source0Download: http://code.google.com/p/libass/downloads/list
 Source0:	http://libass.googlecode.com/files/%{name}-%{version}.tar.xz
-# Source0-md5:	d99381922dcbeb7a766d2e7825cca193
+# Source0-md5:	1855bddc4c167f96968dddeeda0eb45c
 URL:		http://code.google.com/p/libass/
 BuildRequires:	enca-devel
 BuildRequires:	fontconfig-devel >= 2.4.2
+BuildRequires:	fribidi-devel >= 0.19.0
 BuildRequires:	freetype-devel >= 1:2.4.0
+# 0.7.0 is not released yet
+#BuildRequires:	harfbuzz-devel >= 0.7.0
 BuildRequires:	pkgconfig
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires:	fontconfig-libs >= 2.4.2
+Requires:	fribidi >= 0.19.0
 Requires:	freetype >= 1:2.4.0
+#Requires:	harfbuzz >= 0.7.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -37,7 +42,9 @@ Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	enca-devel
 Requires:	fontconfig-devel >= 2.4.2
+Requires:	fribidi-devel >= 0.19.0
 Requires:	freetype-devel >= 1:2.4.0
+#Requires:	harfbuzz-devel >= 0.7.0
 
 %description devel
 This package contains the header files for developing applications
@@ -82,7 +89,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Changelog
+%doc COPYING Changelog
 %attr(755,root,root) %{_libdir}/libass.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libass.so.4
 
