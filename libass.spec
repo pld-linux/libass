@@ -12,14 +12,15 @@ URL:		http://code.google.com/p/libass/
 BuildRequires:	enca-devel
 BuildRequires:	fontconfig-devel >= 1:2.4.2
 BuildRequires:	fribidi-devel >= 0.19.0
-BuildRequires:	freetype-devel >= 1:2.4.0
+# pkgconfig(freetype2) >= 9.10.3
+BuildRequires:	freetype-devel >= 1:2.2.1
 BuildRequires:	harfbuzz-devel >= 0.9.5
 BuildRequires:	pkgconfig
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires:	fontconfig-libs >= 1:2.4.2
 Requires:	fribidi >= 0.19.0
-Requires:	freetype >= 1:2.4.0
+Requires:	freetype >= 1:2.2.1
 Requires:	harfbuzz >= 0.9.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -42,7 +43,7 @@ Requires:	%{name} = %{version}-%{release}
 Requires:	enca-devel
 Requires:	fontconfig-devel >= 1:2.4.2
 Requires:	fribidi-devel >= 0.19.0
-Requires:	freetype-devel >= 1:2.4.0
+Requires:	freetype-devel >= 1:2.2.1
 Requires:	harfbuzz-devel >= 0.9.5
 
 %description devel
