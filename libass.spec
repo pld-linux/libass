@@ -78,6 +78,9 @@ Statyczna biblioteka LibASS.
 %{__autoheader}
 %{__automake}
 %configure \
+%ifarch x32
+	--disable-asm \
+%endif
 	--disable-silent-rules
 
 %{__make}
