@@ -20,6 +20,7 @@ BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
+BuildRequires:	yasm >= 1.3.0
 Requires:	fontconfig-libs >= 1:2.4.2
 Requires:	freetype >= 1:2.2.1
 Requires:	fribidi >= 0.19.0
