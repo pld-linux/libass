@@ -5,10 +5,10 @@ Version:	0.12.1
 Release:	3
 License:	MIT-like
 Group:		Libraries
-Source0:	http://github.com/libass/libass/releases/download/%{version}/%{name}-%{version}.tar.xz
+Source0:	https://github.com/libass/libass/releases/download/%{version}/%{name}-%{version}.tar.xz
 # Source0-md5:	dfdcd8b4fbb6a8211db8040b10aa2070
 URL:		https://github.com/libass/libass/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	enca-devel
 BuildRequires:	fontconfig-devel >= 1:2.4.2
@@ -16,8 +16,9 @@ BuildRequires:	fribidi-devel >= 0.19.0
 # pkgconfig(freetype2) >= 9.10.3
 BuildRequires:	freetype-devel >= 1:2.2.1
 BuildRequires:	harfbuzz-devel >= 0.9.5
-BuildRequires:	libtool
+BuildRequires:	libtool >= 2:2
 BuildRequires:	pkgconfig
+BuildRequires:	sed >= 4.0
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 BuildRequires:	yasm >= 1.3.0
@@ -31,7 +32,6 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 LibASS is a portable subtitle renderer for the ASS/SSA (Advanced
 Substation Alpha/Substation Alpha) subtitle format. It is mostly
 compatible with VSFilter.
-
 
 %description -l pl.UTF-8
 LibASS to przenośna biblioteka renderująca napisy w formacie ASS/SSA
@@ -93,6 +93,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+# obsoleted by pkg-config
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libass.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -108,7 +111,6 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libass.so
-%{_libdir}/libass.la
 %{_includedir}/ass
 %{_pkgconfigdir}/libass.pc
 
