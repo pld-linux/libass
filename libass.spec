@@ -1,13 +1,13 @@
 Summary:	LibASS - SSA/ASS subtitles rendering library
 Summary(pl.UTF-8):	LibASS - biblioteka renderująca napisy SSA/ASS
 Name:		libass
-Version:	0.13.2
+Version:	0.13.6
 Release:	1
 License:	MIT-like
 Group:		Libraries
 #Source0Download: https://github.com/libass/libass/releases
 Source0:	https://github.com/libass/libass/releases/download/%{version}/%{name}-%{version}.tar.xz
-# Source0-md5:	1c8cbd5751aeb192bda04a65d0464fd9
+# Source0-md5:	daa6cfca437c0776af5f79750cdd9b4e
 URL:		https://github.com/libass/libass/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -102,7 +102,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc COPYING Changelog
 %attr(755,root,root) %{_libdir}/libass.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libass.so.5
+%attr(755,root,root) %ghost %{_libdir}/libass.so.9
 
 %files devel
 %defattr(644,root,root,755)
