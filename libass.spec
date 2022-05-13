@@ -1,20 +1,20 @@
 Summary:	LibASS - SSA/ASS subtitles rendering library
 Summary(pl.UTF-8):	LibASS - biblioteka renderująca napisy SSA/ASS
 Name:		libass
-Version:	0.15.2
+Version:	0.16.0
 Release:	1
 License:	MIT-like
 Group:		Libraries
 #Source0Download: https://github.com/libass/libass/releases
 Source0:	https://github.com/libass/libass/releases/download/%{version}/%{name}-%{version}.tar.xz
-# Source0-md5:	c85e78d2e35661ab4e6295681e075d16
+# Source0-md5:	a2427d53de938d9b3ea74a84e3749322
 URL:		https://github.com/libass/libass/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	fontconfig-devel >= 1:2.10.92
-BuildRequires:	fribidi-devel >= 0.19.0
-# pkgconfig(freetype2) >= 9.10.3
-BuildRequires:	freetype-devel >= 1:2.2.1
+BuildRequires:	fribidi-devel >= 0.19.1
+# pkgconfig(freetype2) >= 9.17.3
+BuildRequires:	freetype-devel >= 1:2.3.6
 BuildRequires:	harfbuzz-devel >= 1.2.3
 BuildRequires:	libtool >= 2:2
 %ifarch %{ix86} %{x8664} x32
@@ -24,8 +24,8 @@ BuildRequires:	pkgconfig
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires:	fontconfig-libs >= 1:2.10.92
-Requires:	freetype >= 1:2.2.1
-Requires:	fribidi >= 0.19.0
+Requires:	freetype >= 1:2.3.6
+Requires:	fribidi >= 0.19.1
 Requires:	harfbuzz >= 1.2.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -45,8 +45,8 @@ Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki LibASS
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	fontconfig-devel >= 1:2.10.92
-Requires:	freetype-devel >= 1:2.2.1
-Requires:	fribidi-devel >= 0.19.0
+Requires:	freetype-devel >= 1:2.3.6
+Requires:	fribidi-devel >= 0.19.1
 Requires:	harfbuzz-devel >= 1.2.3
 
 %description devel
