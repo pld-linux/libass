@@ -1,22 +1,23 @@
 Summary:	LibASS - SSA/ASS subtitles rendering library
 Summary(pl.UTF-8):	LibASS - biblioteka renderująca napisy SSA/ASS
 Name:		libass
-Version:	0.16.0
+Version:	0.17.1
 Release:	1
 License:	MIT-like
 Group:		Libraries
 #Source0Download: https://github.com/libass/libass/releases
 Source0:	https://github.com/libass/libass/releases/download/%{version}/%{name}-%{version}.tar.xz
-# Source0-md5:	a2427d53de938d9b3ea74a84e3749322
+# Source0-md5:	73f00a898161be424e05d4bee1962dbb
 URL:		https://github.com/libass/libass/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	fontconfig-devel >= 1:2.10.92
-BuildRequires:	fribidi-devel >= 0.19.1
 # pkgconfig(freetype2) >= 9.17.3
 BuildRequires:	freetype-devel >= 1:2.3.6
+BuildRequires:	fribidi-devel >= 0.19.1
 BuildRequires:	harfbuzz-devel >= 1.2.3
 BuildRequires:	libtool >= 2:2
+BuildRequires:	libunibreak-devel >= 1.1
 %ifarch %{ix86} %{x8664} x32
 BuildRequires:	nasm
 %endif
@@ -27,6 +28,7 @@ Requires:	fontconfig-libs >= 1:2.10.92
 Requires:	freetype >= 1:2.3.6
 Requires:	fribidi >= 0.19.1
 Requires:	harfbuzz >= 1.2.3
+Requires:	libunibreak >= 1.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -48,6 +50,7 @@ Requires:	fontconfig-devel >= 1:2.10.92
 Requires:	freetype-devel >= 1:2.3.6
 Requires:	fribidi-devel >= 0.19.1
 Requires:	harfbuzz-devel >= 1.2.3
+Requires:	libunibreak-devel >= 1.1
 
 %description devel
 This package contains the header files for developing applications
