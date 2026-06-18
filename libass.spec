@@ -1,13 +1,13 @@
 Summary:	LibASS - SSA/ASS subtitles rendering library
 Summary(pl.UTF-8):	LibASS - biblioteka renderująca napisy SSA/ASS
 Name:		libass
-Version:	0.17.3
+Version:	0.17.4
 Release:	1
 License:	MIT-like
 Group:		Libraries
 #Source0Download: https://github.com/libass/libass/releases
 Source0:	https://github.com/libass/libass/releases/download/%{version}/%{name}-%{version}.tar.xz
-# Source0-md5:	baed6dfc87bed705c1955cc6b932d7f6
+# Source0-md5:	10963e702850fd888cb270abcbe852c3
 URL:		https://github.com/libass/libass/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -19,7 +19,7 @@ BuildRequires:	harfbuzz-devel >= 1.2.3
 BuildRequires:	libtool >= 2:2
 BuildRequires:	libunibreak-devel >= 1.1
 %ifarch %{ix86} %{x8664} x32
-BuildRequires:	nasm
+BuildRequires:	nasm >= 2.10
 %endif
 BuildRequires:	pkgconfig
 BuildRequires:	tar >= 1:1.22
@@ -103,13 +103,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc COPYING Changelog
-%attr(755,root,root) %{_libdir}/libass.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libass.so.9
+%doc COPYING Changelog README.md
+%{_libdir}/libass.so.*.*.*
+%ghost %{_libdir}/libass.so.9
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libass.so
+%{_libdir}/libass.so
 %{_includedir}/ass
 %{_pkgconfigdir}/libass.pc
 
