@@ -24,11 +24,11 @@ BuildRequires:	nasm >= 2.10
 BuildRequires:	pkgconfig
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
-Requires:	fontconfig-libs >= 1:2.10.92
-Requires:	freetype >= 1:2.3.6
-Requires:	fribidi >= 0.19.1
-Requires:	harfbuzz >= 1.2.3
-Requires:	libunibreak >= 1.1
+Requires:	fontconfig-libs%{?_isa} >= 1:2.10.92
+Requires:	freetype%{?_isa} >= 1:2.3.6
+Requires:	fribidi%{?_isa} >= 0.19.1
+Requires:	harfbuzz%{?_isa} >= 1.2.3
+Requires:	libunibreak%{?_isa} >= 1.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -45,12 +45,12 @@ kompatybilna z VSFiltrem.
 Summary:	Header files for LibASS library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki LibASS
 Group:		Development/Libraries
-Requires:	%{name} = %{version}-%{release}
-Requires:	fontconfig-devel >= 1:2.10.92
-Requires:	freetype-devel >= 1:2.3.6
-Requires:	fribidi-devel >= 0.19.1
-Requires:	harfbuzz-devel >= 1.2.3
-Requires:	libunibreak-devel >= 1.1
+Requires:	%{name}%{?_isa} = %{version}-%{release}
+Requires:	fontconfig-devel%{?_isa} >= 1:2.10.92
+Requires:	freetype-devel%{?_isa} >= 1:2.3.6
+Requires:	fribidi-devel%{?_isa} >= 0.19.1
+Requires:	harfbuzz-devel%{?_isa} >= 1.2.3
+Requires:	libunibreak-devel%{?_isa} >= 1.1
 
 %description devel
 This package contains the header files for developing applications
@@ -64,7 +64,7 @@ wykorzystujących bibliotekę LibASS.
 Summary:	Static LibASS library
 Summary(pl.UTF-8):	Statyczna biblioteka LibASS
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}-%{release}
+Requires:	%{name}-devel%{?_isa} = %{version}-%{release}
 
 %description static
 Static LibASS library.
